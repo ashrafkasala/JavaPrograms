@@ -5,8 +5,8 @@ import java.util.concurrent.Semaphore;
 public class OddEvenWIthSemaphore {
 
     public static void main(String... args){
-        OddEven oe = new OddEven();
-        int n=10;
+        final OddEven oe = new OddEven();
+        final int n=10;
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {

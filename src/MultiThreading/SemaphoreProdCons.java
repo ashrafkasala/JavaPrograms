@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreProdCons {
 
     public static void main(String... args){
-        ProdCons2 pc =new ProdCons2();
+        final ProdCons22 pc =new ProdCons22();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -41,7 +41,7 @@ public class SemaphoreProdCons {
 }
 
 
-class ProdCons2{
+class ProdCons22{
 Semaphore sem= new Semaphore(1);
 LinkedList<Integer> list = new LinkedList<>();
     int capacity=2;

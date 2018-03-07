@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 public class SemsPhorePC2 {
 
     public static void main(String... args){
-        PC pc = new PC();
+       final PC pc = new PC();
 
         Thread t1=new Thread(new Runnable() {
             @Override

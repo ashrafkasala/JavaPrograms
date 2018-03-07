@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class ProducerConsumer {
 
     public static void main(String... args){
-        ProdCons pc =new ProdCons();
+        final ProdCons pc =new ProdCons();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
