@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Created by kaas0616 on 2018-02-08.
+ * Created by kaas0616 on 2018-02-08.   new change
  */
 public class CuttingTheRod {
     public static void main(String... args ){
