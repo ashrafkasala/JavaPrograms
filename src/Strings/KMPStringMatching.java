@@ -56,7 +56,7 @@ public class KMPStringMatching {
             // the loop calculates lps[i] for i = 1 to M-1
             while (i < M)
             {
-                
+
                 if (pat.charAt(i) == pat.charAt(j))
                 {
                     j++;
