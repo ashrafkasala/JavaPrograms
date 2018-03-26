@@ -25,6 +25,14 @@ public class NeetEfficent {
             }
         }
 
+        for(int k=index;k>0;k--){
+            if(Integer.parseInt(String.valueOf(ns.charAt(k))) == Integer.parseInt(String.valueOf(ns.charAt(k - 1)))){
+                index=k-1;
+            }
+            else
+                break;
+        }
+
         if (index != -1) {
             StringBuilder ns2 = new StringBuilder(ns);
             ns2.setCharAt(index,Character.forDigit(rep-1, RADIX) );
