@@ -1,5 +1,7 @@
 package Strings;
 
+import java.util.Arrays;
+
 public class KMPStringMatching {
     // JAVA program for implementation of KMP pattern
 // searching algorithm
@@ -17,7 +19,7 @@ public class KMPStringMatching {
             // Preprocess the pattern (calculate lps[]
             // array)
             computeLPSArray(pat,M,lps);
-
+System.out.println(Arrays.toString(lps));
             int i = 0;  // index for txt[]
             while (i < N)
             {

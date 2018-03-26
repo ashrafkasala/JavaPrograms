@@ -28,7 +28,7 @@ public class LCA {
         tree.root.right.right = new Node(4);
 
 
-        System.out.println(findLCA(root,4,7));
+        System.out.println(findLCA(root,6,7));
     }
 
     static int findLCA(Node node,int n1,int n2){
