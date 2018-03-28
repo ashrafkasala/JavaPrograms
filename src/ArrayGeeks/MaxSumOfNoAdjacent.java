@@ -1,6 +1,6 @@
 package ArrayGeeks;
 
-import static sun.swing.MenuItemLayoutHelper.max;
+//import static sun.swing.MenuItemLayoutHelper.max;
 
 /**
  * Created by kaas0616 on 2018-03-15.
