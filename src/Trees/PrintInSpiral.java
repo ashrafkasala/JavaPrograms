@@ -15,12 +15,12 @@ import java.util.*;
 class Node
 {
     int data;
-    Node left, right;
+    Node left, right,parent;
 
     public Node(int item)
     {
         data = item;
-        left = right = null;
+        left = right = parent=null;
     }
 }
 
