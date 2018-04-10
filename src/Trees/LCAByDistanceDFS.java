@@ -30,7 +30,7 @@ public class LCAByDistanceDFS {
     }
 
     static Node findLCAByDistance(Node root,Node node1,Node node2){
-dis=0;
+          dis=0;
         getDistance(root,node1,0);
         int d1=dis;
         getDistance(root,node2,0);
