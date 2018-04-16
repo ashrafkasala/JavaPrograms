@@ -1,5 +1,7 @@
 package Strings;
 
+import java.util.HashMap;
+
 public class LongestNonRepeatedSubstring {
     public static void main(String... args){
 
@@ -34,6 +36,30 @@ public class LongestNonRepeatedSubstring {
         }
 
         System.out.println(Math.max(curL,maxL));
+
+
+
+
+
+
+        //approach 2:
+
+        HashMap<Character,Integer> map=new HashMap<>();
+        int j=0;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<s.length();i++){
+
+            if(map.containsKey(s.charAt(i)))
+                j=Math.max(j,map.get(s.charAt(i))+1);
+
+            map.put(s.charAt(i),i);
+            max=Math.max(max,i-j+1);
+        }
+
+        System.out.println("max = " + max);
+
+
+
     }
 
 
