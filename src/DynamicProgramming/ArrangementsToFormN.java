@@ -1,6 +1,7 @@
 package DynamicProgramming;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class ArrangementsToFormN {
     static int[] lookUp=new int[100];

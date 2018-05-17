@@ -14,11 +14,13 @@ public class KMPStringMatching {
             // create lps[] that will hold the longest
             // prefix suffix values for pattern
             int lps[] = new int[M];
+            int lps2[]=new int[M];
             int j = 0;  // index for pat[]
 
             // Preprocess the pattern (calculate lps[]
             // array)
             computeLPSArray(pat,M,lps);
+            computeLPSArray2(pat,M,lps2);
 System.out.println(Arrays.toString(lps));
             int i = 0;  // index for txt[]
             while (i < N)
@@ -46,6 +48,37 @@ System.out.println(Arrays.toString(lps));
                         i = i+1;
                 }
             }
+
+            //solution 2
+            j=0;
+            for( i=0;i<N;i++){
+
+                if(txt.charAt(i)==pat.charAt(j)){
+
+                    j++;
+                    if(j==M) {
+                        System.out.println("found at "+(i-j+1));
+                        break;
+                    }
+
+                }
+               else{
+
+                    while(j>0){
+
+                        j=lps2[j-1];
+                        if(txt.charAt(i)==pat.charAt(j))
+                        {
+                            j++;
+                            break;
+                        }
+                    }
+                }
+
+
+            }
+
+
         }
 
         void computeLPSArray(String pat, int M, int lps[])
@@ -84,14 +117,48 @@ System.out.println(Arrays.toString(lps));
                     }
                 }
             }
+            System.out.println(Arrays.toString(lps));
         }
+    void computeLPSArray2(String pat, int M, int lps2[])
+    {
+
+        int i=1,j=0;
+        lps2[0]=0;
+
+        for( i=1;i<M;i++){
+
+            if(pat.charAt(i)==pat.charAt(j)){
+                j++;
+                lps2[i]=j;
+            }
+            else{
+
+                while(j>0){
+
+                    j=lps2[j-1];
+                    if(pat.charAt(i)==pat.charAt(j))
+                    {
+                        lps2[i]=j+1;
+                        break;
+                    }
+                }
+                if(j==0){
+                    lps2[i]=0;
+                    j=0;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(lps2));
+    }
 
         // Driver program to test above function
         public static void main(String args[])
         {
-            String txt = "ABABDABACDABABCABAB";
+            String txt = "ABZAZDABACDABABCABAB";
             String pat = "ABABCABAB";
-            new KMPStringMatching   ().KMPSearch(pat,txt);
+            String pat2="ZDABA";
+            new KMPStringMatching   ().KMPSearch(pat2,txt);
         }
     }
 
