@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class LCA {
     static Node root;
+    static int LCA=Integer.MAX_VALUE;
     static List<Integer> path1 = new ArrayList<>();
     static List<Integer> path2 = new ArrayList<>();
     public static void main(String[] args)
@@ -28,7 +29,10 @@ public class LCA {
         tree.root.right.right = new Node(4);
 
 
-        System.out.println(findLCA(root,6,7));
+        System.out.println(findLCA(root,6,2));
+
+        findLCA2(root,6,2);
+        System.out.println("LCA = " + LCA);
     }
 
     static int findLCA(Node node,int n1,int n2){
@@ -66,5 +70,32 @@ public class LCA {
         return false;
     }
 
+    static boolean findLCA2(Node root,int n1,int n2){
+
+        if(root==null)
+            return false;
+
+
+        boolean leftR=findLCA2(root.left,n1,n2);
+        boolean rightR=findLCA2(root.right,n1,n2);
+        if(root.data==n1 || root.data ==n2)
+            return true;
+        if( leftR && (root.data==n1 || root.data==n2)) {
+            if(LCA==Integer.MAX_VALUE)
+            LCA = root.data;
+        }
+       else if( rightR && (root.data==n1 || root.data==n2))
+        {
+            if(LCA==Integer.MAX_VALUE)
+                LCA = root.data;
+        }
+       else if(leftR &&  rightR) {
+            if(LCA==Integer.MAX_VALUE)
+                LCA = root.data;
+        }
+
+        return leftR || rightR;
+
+    }
     
 }
